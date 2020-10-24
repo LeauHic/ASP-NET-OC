@@ -1,0 +1,27 @@
+﻿@model ChoixResto.ViewModels.HomeViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <p>Je suis la vue Index</p>
+        @Html.Partial("Connexion")
+    </div>
+    <div>
+        @using (Html.BeginForm("Index", "Home"))
+        { 
+            @Html.DropDownList("RestoChoisi", (SelectList)ViewBag.ListeDesRestos);
+            <input type="submit" name="valider" value="Valider" />
+        }
+    </div>
+</body>
+</html>

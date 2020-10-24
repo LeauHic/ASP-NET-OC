@@ -1,0 +1,36 @@
+﻿@model ChoixResto.Models.Resto
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet"/>
+    <title>Modifier Restaurant</title>
+</head>
+<body>
+<h2>Modifier un restaurant</h2>
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>Modifier le restaurant @Model.Nom</legend>
+                <div>
+                    @Html.LabelFor(model => model.Nom)
+                    @Html.TextBox("Nom", Model.Nom)
+                    @Html.ValidationMessageFor(model => model.Nom)
+                    @Html.ValidationMessageFor(model => model.Nom)
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.Telephone)
+                    @Html.TextBox("Telephone", Model.Telephone)
+                    @Html.ValidationMessageFor(model => model.Telephone)
+                </div>
+                <br/>
+                <input type="submit" value="modifier" />
+            </fieldset>
+        }
+</body>
+</html>
+
